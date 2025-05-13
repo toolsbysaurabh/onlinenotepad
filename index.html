@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive Notepad Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: For icons (Font Awesome example) -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-actions">
+                <button id="btn-new" title="New File">📄 New</button>
+                <button id="btn-open" title="Open File">📂 Open</button>
+                <button id="btn-save" title="Save File">💾 Save</button>
+                <button id="btn-print" title="Print">🖨️ Print</button>
+            </div>
+            <div class="sidebar-section" id="file-list-section">
+                <h3>Files</h3>
+                <ul id="file-list">
+                    <!-- Example, can be dynamic later -->
+                    <li class="active-file">Untitled.txt</li>
+                </ul>
+            </div>
+            <div class="sidebar-section" id="settings-section">
+                <h3>Settings</h3>
+                <div class="setting-item">
+                    <label for="font-size">Font Size:</label>
+                    <button id="btn-font-decrease">-</button>
+                    <span id="current-font-size">14</span>px
+                    <button id="btn-font-increase">+</button>
+                </div>
+                <div class="setting-item">
+                    <label for="theme-switcher">Theme:</label>
+                    <select id="theme-switcher">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="toolbar">
+                <button id="btn-undo" title="Undo">↩️ Undo</button>
+                <button id="btn-redo" title="Redo">↪️ Redo</button>
+                <span class="separator">|</span>
+                <button id="btn-cut" title="Cut">✂️ Cut</button>
+                <button id="btn-copy" title="Copy">📋 Copy</button>
+                <button id="btn-paste" title="Paste">📄 Paste</button>
+                <button id="btn-select-all" title="Select All">selectAll</button>
+                <span class="separator">|</span>
+                 <button id="btn-toggle-fullscreen" title="Fullscreen">Fullscreen</button>
+            </div>
+            <textarea id="notepad-area" spellcheck="false" placeholder="Start typing here..."></textarea>
+        </main>
+
+        <footer class="status-bar">
+            <span id="word-count">Words: 0</span>
+            <span id="char-count">Characters: 0</span>
+            <span id="current-file-name-status">File: Untitled.txt</span>
+        </footer>
+    </div>
+
+    <!-- Hidden input for file opening -->
+    <input type="file" id="file-input" accept=".txt, .md, .js, .css, .html" style="display: none;">
+
+    <script src="script.js"></script>
+</body>
+</html>
